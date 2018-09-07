@@ -1,5 +1,5 @@
 img:not(navbar-icon-style) {
-  width: 36px;
+  width: auto;
   height: 36px;
 }
 
@@ -10,6 +10,11 @@ img:not(navbar-icon-style) {
 
 .background, .info-jumbotron {
   background-color: ghostwhite;
+}
+
+.btn-custom, .btn-primary:active {
+  color: #4d4d4d;
+  background: lightgrey;
 }
 
 .back-to-the-top {
