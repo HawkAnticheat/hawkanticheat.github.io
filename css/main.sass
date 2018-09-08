@@ -5,18 +5,45 @@ img:not(navbar-icon-style)
 .info-jumbotron
   @extend .background
   text-align: center
-  padding-top: 10em
+  color: ghostwhite
+  background: url(../bg.png) no-repeat
 
 .background
   background-color: ghostwhite
 
-.btn-custom, .btn-primary:active //https://stackoverflow.com/questions/25923623/change-hover-color-on-a-button-with-bootstrap-customization
+.btn-custom
   color: #4d4d4d
   background: lightgrey
+  border-color: transparent
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary
+  background: #404040
+  border-color: transparent
+
+.site-section
+  padding: 50px 0 100px 0
+
+.about
+  padding-left: 20px
+  padding-right: 20px
+  text-align: center
+  font-size: 20px
+
+.footer
+  text-align: center
+  font-family: inherit
+
+img:not(footer-icon-style)
+  width: 92px
+  height: 46px
 
 .back-to-the-top
   cursor: pointer
+  background-color: lightgrey
+  border-color: lightgrey
   position: fixed
   right: 20px
   bottom: 20px
   display: none
+  box-shadow: none
+  border-radius: 0
