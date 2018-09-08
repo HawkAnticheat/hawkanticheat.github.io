@@ -6,6 +6,7 @@ img:not(navbar-icon-style) {
 .info-jumbotron {
   text-align: center;
   color: ghostwhite;
+  border-radius: 0;
   background: url(../bg.png) no-repeat;
 }
 
