@@ -40,15 +40,23 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="#"><i class="fa fa-home" aria-hidden="true"></i>
+                <a class="nav-link" href="#" onclick="smoothScroll('jumbo')"><i class="fa fa-home"
+                                                                                   aria-hidden="true"></i>
                     Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#about"><i class="fa fa-info-circle" aria-hidden="true"></i>
+                <a class="nav-link" href="#about" onclick="smoothScroll('about')"><i class="fa fa-info-circle"
+                                                                                        aria-hidden="true"></i>
                     About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#cheats-detected"><i class="fa fa-address-book" aria-hidden="true"></i>
+                <a class="nav-link" href="#features" onclick="smoothScroll('features')"><i class="fas fa-list-alt"
+                                                                                           aria-hidden="true"></i>
+                    Features</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#cheats-detected" onclick="smoothScroll('cheats-detected')"><i
+                        class="fa fa-address-book" aria-hidden="true"></i>
                     Cheats Detected</a>
             </li>
         </ul>
@@ -89,22 +97,87 @@
 <header id="about">
     <div class="container site-section about">
         <div class="row justify-content-center">
-            <div class="col col-xs-8 col-sm-4 col-md-3 text-center">
+            <div class="col col-xs-8 col-sm-1 col-md-3 text-center">
                 <h2>About</h2>
                 <hr>
             </div>
         </div>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit pretium risus iaculis accumsan. Praesent
-        sit amet arcu in risus posuere aliquam vitae sed lorem. Morbi tincidunt elit tellus, id facilisis metus semper
-        in. Nulla facilisi. Donec condimentum turpis quis dignissim tristique. Mauris non pretium metus. Nam faucibus
-        scelerisque scelerisque.
-        Integer ac sem sed est pellentesque finibus. Maecenas eros nisl, sagittis vitae lobortis mattis, efficitur nec
-        elit. Sed hendrerit est at sapien dignissim, non bibendum sapien semper. Praesent iaculis accumsan augue, vel
-        ullamcorper velit.
+        <div class="about-summary">
+            <h4>What is Hawk Anticheat?</h4>
+            Hawk is a general purpose, simple anti-cheating plugin for Spigot servers. It attempts to
+            help moderate players' interactions on a server. More specifically, interactions caused by
+            exploits in the Minecraft protocol that create unfair advantages for a player. Such
+            exploits can be achieved by modifying the client and many of these modifications are
+            designed to bypass common anti-cheating solutions. Hawk is aimed to be a simple, yet
+            thorough solution to prevent cheating in Minecraft.
+            <p></p>
+            <h4>Why choose Hawk Anticheat?</h4>
+            Many other anti-cheat systems struggle to keep up with the latest hacks by adding small
+            patches after each update. Eventually, these systems become too complex to repair known
+            bypasses in time. There are also not many anti-cheat systems supporting older, yet still
+            popular Minecraft versions (i.e. little support for MC 1.7.10). Hawk is made to be a
+            simple, yet straightforward anti-cheat system to prevent bypasses. If a bypass is found,
+            it will become the highest priority to solve for the development of Hawk.
+            <p></p>
+            Hawk currently contains 21 checks which analyze players for suspicious combat,
+            interaction, movement, and malicious exploitation within the protocol. Hawk's checks will
+            only observe the players' actions and collect statistics based on the observations. No
+            checks test for cheats by interrupting the game experience, such as spawning NPCs or
+            applying knock-back.
+        </div>
+    </div>
+</header>
+<header id="features">
+    <div class="container site-section about">
+        <div class="about-features">
+            <div class="row justify-content-center">
+                <div class="col col-xs-8 col-sm-1 col-md-3 text-center">
+                    <h2>Features</h2>
+                    <hr>
+                </div>
+            </div>
+            <div class="about-features">
+                <h4>Asynchronous</h4>
+                A majority of Hawk’s checks perform on the networking thread. This allows
+                for precise checking without adding significant load on the main thread. In other words,
+                when you get high traffic, Hawk won’t drop your TPS.
+                <p></p>
+                <h4>Dependency Free</h4>
+                Hawk fully runs without any dependencies, since it takes advantage of
+                Netty and NMS code. Say goodbye to ProtocolLib.
+                <p></p>
+                <h4>Free & Open-sourced</h4>
+                Yes! Many anticheats running at the packet level charge over $100 USD.
+                Hawk is free, open-sourced, and licensed under GPLv3. If you don’t like a check or
+                feature, feel free to modify it or contribute to the project.
+                <p></p>
+                <h4>Simple, but powerful framework</h4>
+                Hawk’s framework allows developers to easily implement new
+                checks and make use of powerful utilities.
+                <p></p>
+                <h4>Movement Checking</h4>
+                Hawk features full phase protection and strict speed checks. It stops
+                the exploitation of common anti-cheat bypasses such as B-Hop, Y-Port, skip phase, etc...
+                <p></p>
+                <h4>Combat Checking</h4>
+                Hawk fully runs without any dependencies, since it takes advantage of
+                Netty and NMS code. Say goodbye to ProtocolLib.
+                <p></p>
+                <h4>Detailed Configuration</h4>
+                From enabling or disabling to editing specific values of a check,
+                Hawk's configuration provides the user with great freedom to modify checking behavior,
+                notification messages, and the execution of punishments.
+                <p></p>
+                <h4>SQL Support</h4>
+                Hawk allows logging to an SQL database server. This can be very useful for
+                multi-server networks that wish to track violations more efficiently.
+                <p></p>
+            </div>
+        </div>
     </div>
 </header>
 <header id="cheats-detected">
-    <div class="container" style="padding-bottom: 100px">
+    <div class="container site-section" style="padding-bottom: 100px">
         <div class="row justify-content-center">
             <div class="col col-xs-8 col-sm-4 col-md-3 text-center">
                 <h2>Cheats Detected</h2>
@@ -114,122 +187,142 @@
         <div class="card-columns">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Fight Hitboxes</h5>
-                    <p class="card-test">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h5 class="card-title">Fight Hitbox</h5>
+                    <p class="card-test">A server-sided hit validation system designed to prevent illegitimate
+                        interactions to entities.
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Fight Critical's</h5>
+                    <p class="card-test">Verifies movement when attempting to land critical hits.
+                    </p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Phase</h5>
-                    <p class="card-test">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="card-test">Advanced server-sided collision detection. Detects and prevents the
+                        modification of movement to pass through materials.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Fly</h5>
-                    <p class="card-test">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="card-test">Verifies that a player falls when not standing on anything.
+                    </p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Block Break Speed</h5>
-                    <p class="card-test">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="card-test">Verifies that a player does not destroy a block too quickly.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Clock Speed</h5>
-                    <p class="card-test">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="card-test">Analyzes PacketPlayInFlying packets and checks whether a player is sending them
+                        at a higher frequency than normal.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Speed (Movement)</h5>
-                    <p class="card-test">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="card-test">Verifies horizontal movement velocity.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Fight (Synchronized)</h5>
-                    <p class="card-test">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="card-test">Analyzes the time difference between a player's hit and last move.
+                    </p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Inertia</h5>
-                    <p class="card-test">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="card-test">Verifies horizontal movement while in air.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Block Break Hitbox</h5>
-                    <p class="card-test">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="card-test">A server-sided hit validation system designed to prevent illegitimate
+                        interactions to blocks.
+                    </p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Wrong Block</h5>
-                    <p class="card-test">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="card-test">Verifies that a player interacted with a block before destroying it.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Liquid Exit</h5>
-                    <p class="card-test">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="card-test">Verifies that players do not exit liquids upwards unless there is a solid
+                        material adjacent to the player.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Ground Spoof</h5>
-                    <p class="card-test">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="card-test">Validates the integrity of the "ground" flag in PacketPlayInFlying packets.
+                    </p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Fight Speed</h5>
-                    <p class="card-test">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="card-test">Analyzes a player's entity interaction frequency.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Fight Accuracy</h5>
-                    <p class="card-test">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="card-test">Analyzes a player's interaction accuracy.
+                    </p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Fight Aimbot</h5>
-                    <p class="card-test">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="card-test">Analyzes a player's mouse movements during entity interaction.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Fight No Swing</h5>
-                    <p class="card-test">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="card-test">Verifies that a player swung their arm before and at the same tick as hitting
+                        an entity.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">AntiVelocity</h5>
-                    <p class="card-test">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="card-test">Verifies that a player accepts knockback.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Invalid Pitch</h5>
-                    <p class="card-test">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="card-test">Verifies that a player's head pitch is not less than -90 degrees or greater
+                        than 90 degrees.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Fight Reach Approx</h5>
-                    <p class="card-test">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="card-test">Validates entity interaction based on an approximate distance calculation.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Fight Direction Approx</h5>
-                    <p class="card-test">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p class="card-test">Validates entity interaction based on an approximate direction calculation.</p>
                 </div>
             </div>
         </div>
@@ -256,5 +349,6 @@
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
 <script src="js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 </body>
 </html>
