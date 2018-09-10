@@ -1,6 +1,6 @@
 img:not(navbar-icon-style) {
   width: auto;
-  height: 36px;
+  height: 26px;
 }
 
 .info-jumbotron {
@@ -26,7 +26,7 @@ img:not(navbar-icon-style) {
 }
 
 .site-section {
-  padding: 50px 0 100px 0;
+  padding: 50px 0 50px 0;
 }
 
 .about {
@@ -36,14 +36,15 @@ img:not(navbar-icon-style) {
   font-size: 20px;
 }
 
+.about-summary, .about-features {
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 1.5em;
+}
+
 .footer {
   text-align: center;
   font-family: inherit;
-}
-
-img:not(footer-icon-style) {
-  width: 92px;
-  height: 46px;
 }
 
 .back-to-the-top {

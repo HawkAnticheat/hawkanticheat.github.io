@@ -7,7 +7,7 @@ $(window).scroll(function () {
     }
 });
 $('#back-to-the-top').click(function () {      // When arrow is clicked
-    scrollTo(0, 1);
+    smoothScroll('jumbo')
 });
 
 function currentYPosition() {
